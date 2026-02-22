@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Scam Prediction</title>
+</head>
+<body>
+    <h1>Job Scam Prediction</h1>
+
+    <form method="post">
+    <textarea name="job_desc" rows="10" cols="70" placeholder="Paste job description here..." required></textarea>
+    <br><br>
+    <button type="submit">Check Job</button>
+    </form>
+
+{% if prediction %}
+    <h2>{{ prediction }}</h2>
+    <p>{{ confidence }}</p>
+{% endif %}
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Scam Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+
+            /* Background Image */
+            background: url("https://images.unsplash.com/photo-1521791136064-7986c2920216") no-repeat center center/cover;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            width: 600px;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff4d4d;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e60000;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .confidence {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Job Scam Prediction</h1>
+
+        <form method="post">
+            <textarea name="job_desc" placeholder="Paste job description here..." required></textarea>
+            <br>
+            <button type="submit">Check Job</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">{{ prediction }}</div>
+            <div class="confidence">{{ confidence }}</div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
